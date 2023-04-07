@@ -99,7 +99,7 @@ function checkWin() {
 
     })
 
-    if (cntChecked == 9) {
+    if (cntChecked == 9 && winAlready === false) {
         displayTurn.textContent = "Draw!"
         allSquares.forEach(square => square.replaceWith(square.cloneNode(true)))
         //restart button
@@ -164,6 +164,7 @@ document.querySelector(".restart").addEventListener('click', event => {
     gogo = "doge"
     displayTurn.textContent = "Doge goes first!"
     cntChecked = 0
+    winAlready = false
     displayBoard()
 })
 
